@@ -5,7 +5,6 @@ plugins {
 
 android {
     compileSdkVersion 33
-
     defaultConfig {
         applicationId "io.bitrise.sample.android"
         minSdkVersion 21
@@ -21,6 +20,10 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        create(BuildType.test) {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'     
         }
     }
     compileOptions {
